@@ -13,7 +13,7 @@ p {
 }
 
 a {
-    color: royalblue;
+    color: #4760a7;
     text-decoration: none;
 }
 
@@ -23,7 +23,7 @@ a:hover {
 
 .navbar {
     overflow: hidden;
-    background-color: #212529;
+    background-color: #61656a;
     width: 100%;
     position: fixed;
     top: 0;
@@ -46,7 +46,7 @@ a:hover {
 }
 
 .navbar a:hover {
-    background: royalblue;
+    background: #0f1e50;
 }
 
 .navbar .argmining {
@@ -87,12 +87,12 @@ a:hover {
 }
 
 .section h2 {
-    font-size: 24pt;
+    font-size: 28pt;
     text-transform: uppercase;
 }
 
 .section h3 {
-    font-size: 20pt;
+    font-size: 24pt;
 }
 
 
