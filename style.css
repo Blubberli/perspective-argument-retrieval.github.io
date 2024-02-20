@@ -1,10 +1,49 @@
 body {
-    margin: 0;
-    font-family: 'Georgia', serif; /* Changed to Georgia for a different look */
-    font-size: 20pt; /* Increased from 16pt to 20pt for larger text */
-    line-height: 1.6em; /* Slightly increased line height for better readability */
-    color: #212529;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    margin: 20px;
+    padding: 20px;
 }
+
+h1 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 24pt; /* Large size for headers */
+    text-align: center;
+    color: #d9230f; /* A color that stands out */
+}
+
+ul {
+    list-style: none; /* Removes default bullet points */
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    font-size: 18pt; /* Large, readable text size */
+    margin-bottom: 10px; /* Spacing between list items */
+}
+
+ul li:before {
+    content: '•'; /* Custom bullet point */
+    color: #d9230f; /* Matching the header color */
+    font-weight: bold; /* Bold bullet point */
+    display: inline-block;
+    width: 20px; /* Ensures alignment of list items */
+    margin-left: -20px; /* Adjust to fit your design */
+}
+
+footer {
+    font-size: 14pt;
+    text-align: center;
+    margin-top: 20px; /* Space before the footer */
+}
+
+.important-note {
+    font-weight: bold;
+    font-style: italic;
+}
+
 
 p {
     margin: 0;
