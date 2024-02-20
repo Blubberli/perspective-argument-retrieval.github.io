@@ -1,5 +1,5 @@
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Optima', Arial, sans-serif;
     color: #333;
     background-color: #f8f8f8;
     margin: 20px;
@@ -7,10 +7,10 @@ body {
 }
 
 h1 {
-    font-family: 'Arial Black', Gadget, sans-serif;
+    font-family: 'Optima', Gadget, sans-serif;
     font-size: 24pt; /* Large size for headers */
     text-align: center;
-    color: #d9230f; /* A color that stands out */
+    color: #6d7caa; /* A color that stands out */
 }
 
 ul {
@@ -100,7 +100,7 @@ a:hover {
 .masthead {
     padding: 20px 0;
     text-align: center;
-    font-family: 'Georgia', serif;
+    font-family: 'Optima', Arial, sans-serif;
 }
 
 .masthead .workshop_title {
