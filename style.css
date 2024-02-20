@@ -1,8 +1,8 @@
-ody {
+body {
     margin: 0;
-    font-family: sans-serif;
-    font-size: 16pt;
-    line-height: 1.5em;
+    font-family: 'Georgia', serif; /* Changed to Georgia for a different look */
+    font-size: 20pt; /* Increased from 16pt to 20pt for larger text */
+    line-height: 1.6em; /* Slightly increased line height for better readability */
     color: #212529;
 }
 
@@ -27,7 +27,7 @@ a:hover {
     width: 100%;
     position: fixed;
     top: 0;
-    font-size: 11pt;
+    font-size: 14pt;
     text-transform: uppercase;
 }
 
@@ -61,7 +61,7 @@ a:hover {
 .masthead {
     padding: 20px 0;
     text-align: center;
-    font-family: "Roboto Slab";
+    font-family: 'Georgia', serif;
 }
 
 .masthead .workshop_title {
