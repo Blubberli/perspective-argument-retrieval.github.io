@@ -11,6 +11,11 @@ h1 {
     font-size: 24pt; /* Large size for headers */
     text-align: center;
     color: #6d7caa; /* A color that stands out */
+    border: 2px solid #45597e; /* Darker border color */
+    padding: 10px; /* Spacing between border and text */
+    margin: 20px auto; /* Centering the h1 element with automatic horizontal margins */
+    display: inline-block; /* Allows the border to wrap around the content */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Optional: adds a shadow for a 3D effect */
 }
 
 ul {
@@ -49,6 +54,7 @@ p {
     margin: 0;
     padding: 0;
     line-height: 1.5em;
+    font-size: 18pt;
 }
 
 a {
@@ -315,21 +321,6 @@ a:hover {
     overflow: hidden;
 }
 
-#footer .dummy {
-    width: 1200px;
-    margin: auto;
-}
-
-#footer a {
-    display: block;
-    float: right;
-    width: 20px;
-    height: 20px;
-    padding: 0 8px 16px 8px;
-    font-size: 18pt;
-    text-align: center;
-    border: 2px solid royalblue;
-}
 
 #footer a:hover {
     border: 2px solid royalblue;
