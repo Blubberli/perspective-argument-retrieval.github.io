@@ -70,74 +70,75 @@
             advance state-of-the-art retrieval models by considering the perspective of societal diversity.</p>
     </section>
 
-    <section class="smaller-font"" id="task">
-        <h2>Task Description</h2>
-        <p>Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a corpus given a
-            specific query. With this proposal, we formulate perspective argument retrieval as an expansion of argument
-            retrieval with socio-demographic information. Concretely, this shared task proposes three scenarios of
-            varying difficulties to considering socio-demographic profiles. Therefore, we want to foster approaches
-            taking into account latent aspects of argumentation beyond semantic features, such as personal attitude. We
-            consider these aspects both during retrieval and evaluation. </p>
-        <h3>Retrieval Scenarios</h3>
-        <p>This shared task distinguishes between three different retrieval scenarios with increasing difficulty. Note,
-            we show in the Appendix A. baseline results for the first scenario. These results represent the lower bound
-            of the expected performance and show that the first scenario with the lowest difficulty is generally
-            solvable with sufficient performance.
-            <br>
-            <strong>Scenario 1: Baseline</strong> retrieval of relevant arguments given a specific query from a given
-            corpus. Therefore,
-            we evaluate the general abilities of a system to retrieve relevant arguments.
-            Example query: <em>Are you in favor of the introduction of a tax on foods containing sugar (sugar tax)?</em>
-            Example relevant candidates: <em>The reduction of sugar in food should be pushed. Not every food needs
+    <section class="smaller-font"
+    " id="task">
+    <h2>Task Description</h2>
+    <p>Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a corpus given a
+        specific query. With this proposal, we formulate perspective argument retrieval as an expansion of argument
+        retrieval with socio-demographic information. Concretely, this shared task proposes three scenarios of
+        varying difficulties to considering socio-demographic profiles. Therefore, we want to foster approaches
+        taking into account latent aspects of argumentation beyond semantic features, such as personal attitude. We
+        consider these aspects both during retrieval and evaluation. </p>
+    <h3>Retrieval Scenarios</h3>
+    <p>This shared task distinguishes between three different retrieval scenarios with increasing difficulty. Note,
+        we show in the Appendix A. baseline results for the first scenario. These results represent the lower bound
+        of the expected performance and show that the first scenario with the lowest difficulty is generally
+        solvable with sufficient performance.
+        <br>
+        <strong>Scenario 1: Baseline</strong> retrieval of relevant arguments given a specific query from a given
+        corpus. Therefore,
+        we evaluate the general abilities of a system to retrieve relevant arguments.
+        Example query: <em>Are you in favor of the introduction of a tax on foods containing sugar (sugar tax)?</em>
+        Example relevant candidates: <em>The reduction of sugar in food should be pushed. Not every food needs
             additional sugar as a supplement.</em>
-            <br>
-            <strong>Scenario 2: Explicit perspectivism</strong> extends the baseline task by explicitly adding
-            socio-demographic
-            information to the query and the corpus and limiting the relevant candidates to arguments from authors
-            matching the corresponding demographic information. With this second scenario, we test whether a retrieval
-            system can consider socio-demographic properties when explicitly mentioned in the query and the candidates.
-            Example query: Given a left attitude, are you in favor of the introduction of a tax on foods containing
-            sugar (sugar tax)?
-            Example relevant candidates: <em>With a left attitude, reducing sugar in food should be pushed. Not every food
-                needs additional sugar as a supplement.</em>
-            <br>
-            <strong>Scenario 3: Implicit perspectivism</strong> This scenario is similar to explicit perspectivism, but
-            we only add
-            socio-demographic information to the query. Therefore, we test the ability of a retrieval system to account
-            for latently encoded socio-demographic information within the argument.
-            Example query: <em>Given a liberal attitude, are you in favor of the introduction of a tax on foods containing
-                sugar (sugar tax)?</em>
-            Example relevant candidates: <em>Eating is an individual decision. It doesn't need a nanny state.</em></p>
+        <br>
+        <strong>Scenario 2: Explicit perspectivism</strong> extends the baseline task by explicitly adding
+        socio-demographic
+        information to the query and the corpus and limiting the relevant candidates to arguments from authors
+        matching the corresponding demographic information. With this second scenario, we test whether a retrieval
+        system can consider socio-demographic properties when explicitly mentioned in the query and the candidates.
+        Example query: Given a left attitude, are you in favor of the introduction of a tax on foods containing
+        sugar (sugar tax)?
+        Example relevant candidates: <em>With a left attitude, reducing sugar in food should be pushed. Not every food
+            needs additional sugar as a supplement.</em>
+        <br>
+        <strong>Scenario 3: Implicit perspectivism</strong> This scenario is similar to explicit perspectivism, but
+        we only add
+        socio-demographic information to the query. Therefore, we test the ability of a retrieval system to account
+        for latently encoded socio-demographic information within the argument.
+        Example query: <em>Given a liberal attitude, are you in favor of the introduction of a tax on foods containing
+            sugar (sugar tax)?</em>
+        Example relevant candidates: <em>Eating is an individual decision. It doesn't need a nanny state.</em></p>
 
-        <h3>Retrieval Evaluation</h3>
-        <p>We employ for all three scenarios a two-folded evaluation for a comprehensive measure of the retrieval
-            quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
-        <ul>
-            <li><p>
-                With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant
-                candidates, for
-                example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or
-                arguments that
-                additionally
-                match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong>
-                perspectivism. Following previous work
-                (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
-                precision@ metric.</p></li>
-            <li>
-                <p>
-                    Using diversity, we account for the influence of perspectivism in the evaluation by measuring
-                    whether a
-                    retrieval system proposes arguments balanced regarding the stance distribution and the authors'
-                    demographic
-                    properties (such as gender or political attitude). Following previous studies regarding fairness in
-                    argument
-                    retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
-                    all these
-                    properties separately and average them afterward. Note, since we condition on specific demographic
-                    properties in the query for explicit or implicit perspectivism (scenarios 2 and 3), these
-                    conditioned
-                    properties are withheld.</p></li>
-        </ul>
+    <h3>Retrieval Evaluation</h3>
+    <p>We employ for all three scenarios a two-folded evaluation for a comprehensive measure of the retrieval
+        quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
+    <ul>
+        <li><p>
+            With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant
+            candidates, for
+            example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or
+            arguments that
+            additionally
+            match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong>
+            perspectivism. Following previous work
+            (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
+            precision@ metric.</p></li>
+        <li>
+            <p>
+                Using diversity, we account for the influence of perspectivism in the evaluation by measuring
+                whether a
+                retrieval system proposes arguments balanced regarding the stance distribution and the authors'
+                demographic
+                properties (such as gender or political attitude). Following previous studies regarding fairness in
+                argument
+                retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
+                all these
+                properties separately and average them afterward. Note, since we condition on specific demographic
+                properties in the query for explicit or implicit perspectivism (scenarios 2 and 3), these
+                conditioned
+                properties are withheld.</p></li>
+    </ul>
     </section>
 
     <section class="smaller-font" id="data">
@@ -267,46 +268,46 @@
         <h2>References</h2>
         <ul>
             <li>
-                <p>Bondarenko, A., Fröbe, M., Beloucif, M., Gienapp, L., Ajjour, Y., Panchenko, A., ... & Hagen, M.
-                    (2020).
-                    <cite>Overview of Touché 2020: argument retrieval. In Experimental IR Meets Multilinguality,
-                        Multimodality, and
-                        Interaction: 11th International Conference of the CLEF Association, CLEF 2020, Thessaloniki,
-                        Greece,
-                        September 22–25, 2020, Proceedings 11 (pp. 384-395). Springer International Publishing.</cite>
-                </p>
+                Bondarenko, A., Fröbe, M., Beloucif, M., Gienapp, L., Ajjour, Y., Panchenko, A. & Hagen, M.
+                (2020).
+                <cite>Overview of Touché 2020: argument retrieval. In Experimental IR Meets Multilinguality,
+                    Multimodality, and
+                    Interaction: 11th International Conference of the CLEF Association, CLEF 2020, Thessaloniki,
+                    Greece,
+                    September 22–25, 2020, Proceedings 11 (pp. 384-395). Springer International Publishing.</cite>
+
             </li>
             <li>
-                <p>Bondarenko, Alexander et al. (2022). Overview of Touché 2022: Argument Retrieval. In: Experimental IR
-                    Meets
-                    <cite>Multilinguality, Multimodality, and Interaction. Springer International Publishing, pp.
-                        311–336.</cite></p>
+                Bondarenko, Alexander et al. (2022). Overview of Touché 2022: Argument Retrieval. In: Experimental IR
+                Meets
+                <cite>Multilinguality, Multimodality, and Interaction. Springer International Publishing, pp.
+                    311–336.</cite>
             </li>
             <li>
-                <p>Cherumanal, S. P., Spina, D., Scholer, F., & Croft, W. B. (2021). Evaluating fairness in argument
-                    retrieval. In
-                    <cite>Proceedings of the 30th ACM international conference on information & knowledge management
-                        (pp. 3363-3367).</cite></p>
+                Cherumanal, S. P., Spina, D., Scholer, F., & Croft, W. B. (2021). Evaluating fairness in argument
+                retrieval. In
+                <cite>Proceedings of the 30th ACM international conference on information & knowledge management
+                    (pp. 3363-3367).</cite>
             </li>
             <li>
-                <p>Thakur, N., Reimers, N., Rücklé, A., Srivastava, A., & Gurevych, I. (2021). Beir: A heterogenous
-                    benchmark for
-                    <cite>zero-shot evaluation of information retrieval models. arXiv preprint arXiv:2104.08663.</cite>
-                </p>
+                Thakur, N., Reimers, N., Rücklé, A., Srivastava, A., & Gurevych, I. (2021). Beir: A heterogenous
+                benchmark for
+                <cite>zero-shot evaluation of information retrieval models. arXiv preprint arXiv:2104.08663.</cite>
+
             </li>
             <li>
-                <p>Vamvas, J., & Sennrich, R. (2020, June). X-stance: A Multilingual Multi-Target Dataset for Stance
-                    Detection.
-                    <cite>In 5th SwissText & 16th KONVENS Joint Conference 2020 (p. 9). CEUR-WS. Org.</cite></p>
+                Vamvas, J., & Sennrich, R. (2020, June). X-stance: A Multilingual Multi-Target Dataset for Stance
+                Detection.
+                <cite>In 5th SwissText & 16th KONVENS Joint Conference 2020 (p. 9). CEUR-WS. Org.</cite>
             </li>
             <li>
-                <p>Wachsmuth, Henning, Shahbaz Syed, and Benno Stein (July 2018). "Retrieval of the Best Counterargument
-                    without
-                    <cite>Prior Topic Knowledge". In: Proceedings of the 56th Annual Meeting of the Association for
-                        Computational
-                        Linguistics (Volume 1: Long Papers). Ed. by Iryna Gurevych and Yusuke Miyao. Melbourne,
-                        Australia: Association
-                        for Computational Linguistics, pp. 241–251.</cite></p>
+                Wachsmuth, Henning, Shahbaz Syed, and Benno Stein (July 2018). "Retrieval of the Best Counterargument
+                without
+                <cite>Prior Topic Knowledge". In: Proceedings of the 56th Annual Meeting of the Association for
+                    Computational
+                    Linguistics (Volume 1: Long Papers). Ed. by Iryna Gurevych and Yusuke Miyao. Melbourne,
+                    Australia: Association
+                    for Computational Linguistics, pp. 241–251.</cite>
             </li>
 
         </ul>
