@@ -70,7 +70,7 @@
             advance state-of-the-art retrieval models by considering the perspective of societal diversity.</p>
     </section>
 
-    <section class="section" id="task">
+    <section class="smaller-font"" id="task">
         <h2>Task Description</h2>
         <p>Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a corpus given a
             specific query. With this proposal, we formulate perspective argument retrieval as an expansion of argument
@@ -83,38 +83,44 @@
             we show in the Appendix A. baseline results for the first scenario. These results represent the lower bound
             of the expected performance and show that the first scenario with the lowest difficulty is generally
             solvable with sufficient performance.
-
-            Scenario 1: Baseline retrieval of relevant arguments given a specific query from a given corpus. Therefore,
+            <br>
+            <strong>Scenario 1: Baseline</strong> retrieval of relevant arguments given a specific query from a given
+            corpus. Therefore,
             we evaluate the general abilities of a system to retrieve relevant arguments.
-            Example query: Are you in favor of the introduction of a tax on foods containing sugar (sugar tax)?
-            Example relevant candidates: The reduction of sugar in food should be pushed. Not every food needs
-            additional sugar as a supplement.
-
-            Scenario 2: Explicit perspectivism extends the baseline task by explicitly adding socio-demographic
+            Example query: <em>Are you in favor of the introduction of a tax on foods containing sugar (sugar tax)?</em>
+            Example relevant candidates: <em>The reduction of sugar in food should be pushed. Not every food needs
+            additional sugar as a supplement.</em>
+            <br>
+            <strong>Scenario 2: Explicit perspectivism</strong> extends the baseline task by explicitly adding
+            socio-demographic
             information to the query and the corpus and limiting the relevant candidates to arguments from authors
             matching the corresponding demographic information. With this second scenario, we test whether a retrieval
             system can consider socio-demographic properties when explicitly mentioned in the query and the candidates.
             Example query: Given a left attitude, are you in favor of the introduction of a tax on foods containing
             sugar (sugar tax)?
-            Example relevant candidates: With a left attitude, reducing sugar in food should be pushed. Not every food
-            needs additional sugar as a supplement.
-
-            Scenario 3: Implicit perspectivism This scenario is similar to explicit perspectivism, but we only add
+            Example relevant candidates: <em>With a left attitude, reducing sugar in food should be pushed. Not every food
+                needs additional sugar as a supplement.</em>
+            <br>
+            <strong>Scenario 3: Implicit perspectivism</strong> This scenario is similar to explicit perspectivism, but
+            we only add
             socio-demographic information to the query. Therefore, we test the ability of a retrieval system to account
             for latently encoded socio-demographic information within the argument.
-            Example query: Given a liberal attitude, are you in favor of the introduction of a tax on foods containing
-            sugar (sugar tax)?
-            Example relevant candidates: Eating is an individual decision. It doesn't need a nanny state.</p>
+            Example query: <em>Given a liberal attitude, are you in favor of the introduction of a tax on foods containing
+                sugar (sugar tax)?</em>
+            Example relevant candidates: <em>Eating is an individual decision. It doesn't need a nanny state.</em></p>
 
         <h3>Retrieval Evaluation</h3>
         <p>We employ for all three scenarios a two-folded evaluation for a comprehensive measure of the retrieval
             quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
         <ul>
             <li><p>
-                With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant candidates, for
-                example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or arguments that
+                With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant
+                candidates, for
+                example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or
+                arguments that
                 additionally
-                match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong> perspectivism. Following previous work
+                match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong>
+                perspectivism. Following previous work
                 (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
                 precision@ metric.</p></li>
             <li>
@@ -134,7 +140,7 @@
         </ul>
     </section>
 
-    <section class="section" id="data">
+    <section class="smaller-font" id="data">
         <h2>Data</h2>
         <p>This shared task is grounded on the x-stance dataset (Vamvas & Sennrich, 2020), providing arguments annotated
             with their stance regarding different political issues gathered from the voting recommendation platform
@@ -257,7 +263,7 @@
         -->
     </section>
 
-    <div class="literature-references">
+    <div class="smaller-font">
         <h2>References</h2>
         <ul>
             <li>

@@ -15,7 +15,7 @@ h1 {
     padding: 10px; /* Spacing between border and text */
     margin: 20px auto; /* Centering the h1 element with automatic horizontal margins */
     display: inline-block; /* Allows the border to wrap around the content */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Optional: adds a shadow for a 3D effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for a 3D effect */
 }
 
 ul {
@@ -56,7 +56,9 @@ p {
     line-height: 1.5em;
     font-size: 18pt;
 }
-
+.smaller-font {
+    font-size: 12pt; /* This sets the font size smaller than the 18pt default */
+}
 
 
 a {
@@ -143,7 +145,6 @@ a:hover {
 }
 
 
-
 #about p {
     margin-bottom: 10px;
 }
@@ -159,6 +160,7 @@ a:hover {
     font-size: 0.9em;
     line-height: 1.3em;
 }
+
 #program .papers li {
     padding: 0;
 }
@@ -198,7 +200,7 @@ a:hover {
     text-align: center;
 }
 
-#panel_session .panelist .domain{
+#panel_session .panelist .domain {
     margin-bottom: 10px;
 }
 
@@ -335,10 +337,10 @@ a:hover {
     margin: 1em 0 !important;
     padding: 1em;
     color: #494e52;
-    font-family: -apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     font-size: 1em !important;
     text-indent: initial;
     background-color: #ebf5f8;
     border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(59,156,186,0.25);
+    box-shadow: 0 1px 1px rgba(59, 156, 186, 0.25);
 }
