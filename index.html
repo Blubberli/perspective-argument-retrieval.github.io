@@ -70,17 +70,16 @@
             advance state-of-the-art retrieval models by considering the perspective of societal diversity.</p>
     </section>
 
-    <section class="smaller-font"
-    " id="task">
+    <section class="section" id="task">
     <h2>Task Description</h2>
-    <p>Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a corpus given a
+    <p class="smaller-font">Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a corpus given a
         specific query. With this proposal, we formulate perspective argument retrieval as an expansion of argument
         retrieval with socio-demographic information. Concretely, this shared task proposes three scenarios of
         varying difficulties to considering socio-demographic profiles. Therefore, we want to foster approaches
         taking into account latent aspects of argumentation beyond semantic features, such as personal attitude. We
         consider these aspects both during retrieval and evaluation. </p>
     <h3>Retrieval Scenarios</h3>
-    <p>This shared task distinguishes between three different retrieval scenarios with increasing difficulty. Note,
+    <p class="smaller-font">This shared task distinguishes between three different retrieval scenarios with increasing difficulty. Note,
         we show in the Appendix A. baseline results for the first scenario. These results represent the lower bound
         of the expected performance and show that the first scenario with the lowest difficulty is generally
         solvable with sufficient performance.
@@ -97,8 +96,8 @@
         information to the query and the corpus and limiting the relevant candidates to arguments from authors
         matching the corresponding demographic information. With this second scenario, we test whether a retrieval
         system can consider socio-demographic properties when explicitly mentioned in the query and the candidates.
-        Example query: Given a left attitude, are you in favor of the introduction of a tax on foods containing
-        sugar (sugar tax)?
+        Example query: <em>Given a left attitude, are you in favor of the introduction of a tax on foods containing
+            sugar (sugar tax)?</em>
         Example relevant candidates: <em>With a left attitude, reducing sugar in food should be pushed. Not every food
             needs additional sugar as a supplement.</em>
         <br>
@@ -111,10 +110,10 @@
         Example relevant candidates: <em>Eating is an individual decision. It doesn't need a nanny state.</em></p>
 
     <h3>Retrieval Evaluation</h3>
-    <p>We employ for all three scenarios a two-folded evaluation for a comprehensive measure of the retrieval
+    <p class="smaller-font">We employ for all three scenarios a two-folded evaluation for a comprehensive measure of the retrieval
         quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
     <ul>
-        <li><p>
+        <li><p class="smaller-font">
             With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant
             candidates, for
             example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or
@@ -125,7 +124,7 @@
             (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
             precision@ metric.</p></li>
         <li>
-            <p>
+            <p class="smaller-font">
                 Using diversity, we account for the influence of perspectivism in the evaluation by measuring
                 whether a
                 retrieval system proposes arguments balanced regarding the stance distribution and the authors'
@@ -141,20 +140,20 @@
     </ul>
     </section>
 
-    <section class="smaller-font" id="data">
+    <section class="section" id="data">
         <h2>Data</h2>
-        <p>This shared task is grounded on the x-stance dataset (Vamvas & Sennrich, 2020), providing arguments annotated
+        <p class="smaller-font">This shared task is grounded on the x-stance dataset (Vamvas & Sennrich, 2020), providing arguments annotated
             with their stance regarding different political issues gathered from the voting recommendation platform
             https://www.smartvote.ch/. This platform provides voting suggestions based on a questionnaire that
             politicians and voters fill out. Therein, politicians can argue why they are in favor or against specific
             political issues.</p>
-        <p>We use these arguments covering the 2019 Swiss Federal elections as a corpus and the political issues as
+        <p class="smaller-font">We use these arguments covering the 2019 Swiss Federal elections as a corpus and the political issues as
             queries. Afterward, we enrich these arguments with a total of 13 socio-demographic properties, either
             provided by the voting platform itself (gender, age, party, …) or derived from the filled-out questionnaire
             of the politicians (political attitude, important political aspects, …). This collection encapsulates 5,952
             arguments and 62 queries. This data is multilingual and covers German, French, and Italian. For simplicity,
             we provide examples translated into English in the following.</p>
-        <p>
+        <p class="smaller-font">
             We generate the train and test splits by considering 48 queries as training queries and 14 as development
             queries, while the argument corpus is used for both sets. Apart from the queries for the
             <strong>baseline</strong> scenario,
@@ -162,7 +161,7 @@
             information. While
             the x-stance dataset is publicly available, we will compose two secret test sets:</p>
         <br>
-        <p>
+        <p class="smaller-font">
             1. A set of queries and arguments covering the 2023 Swiss Federal election. For this composition, we will
             follow the same procedure as done for the x-stance dataset.
             <br>
@@ -172,13 +171,13 @@
             formulate specific queries representing them.
         </p>
         <h3>Socio-Demographic Properties</h3>
-        <p>We describe the socio-demographic profile of an author using the properties given by smartvote.ch. This
+        <p class="smaller-font">We describe the socio-demographic profile of an author using the properties given by smartvote.ch. This
             includes eight personal properties: gender, age, party, focal point of life, occupation, education, civil
             status, denomination, and political attitude. In addition, we track whether one of the following political
             issues is essential, neutral, or not important: open foreign policy, liberal economic policy, restrictive
             financial policy, law & order, restrictive migration policy, expanded environmental protection.</p>
         <h3>Dataformat</h3>
-        <p>
+        <p class="smaller-font">
             We will provide the data in the form of two JSON file types. The first, named <code>corpus.jsonl</code>,
             will consist of a collection of arguments along with the authors' socio-demographic profiles. The second
             type includes <code>baseline_train.jsonl</code> and <code>perspectivsm_train.jsonl</code>, which contain
