@@ -54,7 +54,7 @@ p {
     margin: 0;
     padding: 0;
     line-height: 1.5em;
-    font-size: 18pt;
+    font-size: 15pt;
 }
 .smaller-font {
     font-size: 12pt; /* This sets the font size smaller than the 18pt default */

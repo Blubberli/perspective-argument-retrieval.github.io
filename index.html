@@ -71,89 +71,95 @@
     </section>
 
     <section class="section" id="task">
-    <h2>Task Description</h2>
-    <p class="smaller-font">Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a corpus given a
-        specific query. With this proposal, we formulate perspective argument retrieval as an expansion of argument
-        retrieval with socio-demographic information. Concretely, this shared task proposes three scenarios of
-        varying difficulties to considering socio-demographic profiles. Therefore, we want to foster approaches
-        taking into account latent aspects of argumentation beyond semantic features, such as personal attitude. We
-        consider these aspects both during retrieval and evaluation. </p>
-    <h3>Retrieval Scenarios</h3>
-    <p class="smaller-font">This shared task distinguishes between three different retrieval scenarios with increasing difficulty. Note,
-        we show in the Appendix A. baseline results for the first scenario. These results represent the lower bound
-        of the expected performance and show that the first scenario with the lowest difficulty is generally
-        solvable with sufficient performance.
-        <br>
-        <strong>Scenario 1: Baseline</strong> retrieval of relevant arguments given a specific query from a given
-        corpus. Therefore,
-        we evaluate the general abilities of a system to retrieve relevant arguments.
-        Example query: <em>Are you in favor of the introduction of a tax on foods containing sugar (sugar tax)?</em>
-        Example relevant candidates: <em>The reduction of sugar in food should be pushed. Not every food needs
-            additional sugar as a supplement.</em>
-        <br>
-        <strong>Scenario 2: Explicit perspectivism</strong> extends the baseline task by explicitly adding
-        socio-demographic
-        information to the query and the corpus and limiting the relevant candidates to arguments from authors
-        matching the corresponding demographic information. With this second scenario, we test whether a retrieval
-        system can consider socio-demographic properties when explicitly mentioned in the query and the candidates.
-        Example query: <em>Given a left attitude, are you in favor of the introduction of a tax on foods containing
-            sugar (sugar tax)?</em>
-        Example relevant candidates: <em>With a left attitude, reducing sugar in food should be pushed. Not every food
-            needs additional sugar as a supplement.</em>
-        <br>
-        <strong>Scenario 3: Implicit perspectivism</strong> This scenario is similar to explicit perspectivism, but
-        we only add
-        socio-demographic information to the query. Therefore, we test the ability of a retrieval system to account
-        for latently encoded socio-demographic information within the argument.
-        Example query: <em>Given a liberal attitude, are you in favor of the introduction of a tax on foods containing
-            sugar (sugar tax)?</em>
-        Example relevant candidates: <em>Eating is an individual decision. It doesn't need a nanny state.</em></p>
+        <h2>Task Description</h2>
+        <p>Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a
+            corpus given a
+            specific query. With this proposal, we formulate perspective argument retrieval as an expansion of argument
+            retrieval with socio-demographic information. Concretely, this shared task proposes three scenarios of
+            varying difficulties to considering socio-demographic profiles. Therefore, we want to foster approaches
+            taking into account latent aspects of argumentation beyond semantic features, such as personal attitude. We
+            consider these aspects both during retrieval and evaluation. </p>
+        <h3>Retrieval Scenarios</h3>
+        <p>This shared task distinguishes between three different retrieval scenarios with
+            increasing difficulty. Note,
+            we show in the Appendix A. baseline results for the first scenario. These results represent the lower bound
+            of the expected performance and show that the first scenario with the lowest difficulty is generally
+            solvable with sufficient performance.
+            <br>
+            <strong>Scenario 1: Baseline</strong> retrieval of relevant arguments given a specific query from a given
+            corpus. Therefore,
+            we evaluate the general abilities of a system to retrieve relevant arguments.
+            Example query: <em>Are you in favor of the introduction of a tax on foods containing sugar (sugar tax)?</em>
+            Example relevant candidates: <em>The reduction of sugar in food should be pushed. Not every food needs
+                additional sugar as a supplement.</em>
+            <br>
+            <strong>Scenario 2: Explicit perspectivism</strong> extends the baseline task by explicitly adding
+            socio-demographic
+            information to the query and the corpus and limiting the relevant candidates to arguments from authors
+            matching the corresponding demographic information. With this second scenario, we test whether a retrieval
+            system can consider socio-demographic properties when explicitly mentioned in the query and the candidates.
+            Example query: <em>Given a left attitude, are you in favor of the introduction of a tax on foods containing
+                sugar (sugar tax)?</em>
+            Example relevant candidates: <em>With a left attitude, reducing sugar in food should be pushed. Not every
+                food
+                needs additional sugar as a supplement.</em>
+            <br>
+            <strong>Scenario 3: Implicit perspectivism</strong> This scenario is similar to explicit perspectivism, but
+            we only add
+            socio-demographic information to the query. Therefore, we test the ability of a retrieval system to account
+            for latently encoded socio-demographic information within the argument.
+            Example query: <em>Given a liberal attitude, are you in favor of the introduction of a tax on foods
+                containing
+                sugar (sugar tax)?</em>
+            Example relevant candidates: <em>Eating is an individual decision. It doesn't need a nanny state.</em></p>
 
-    <h3>Retrieval Evaluation</h3>
-    <p class="smaller-font">We employ for all three scenarios a two-folded evaluation for a comprehensive measure of the retrieval
-        quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
-    <ul>
-        <li><p class="smaller-font">
-            With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant
-            candidates, for
-            example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or
-            arguments that
-            additionally
-            match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong>
-            perspectivism. Following previous work
-            (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
-            precision@ metric.</p></li>
-        <li>
-            <p class="smaller-font">
-                Using diversity, we account for the influence of perspectivism in the evaluation by measuring
-                whether a
-                retrieval system proposes arguments balanced regarding the stance distribution and the authors'
-                demographic
-                properties (such as gender or political attitude). Following previous studies regarding fairness in
-                argument
-                retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
-                all these
-                properties separately and average them afterward. Note, since we condition on specific demographic
-                properties in the query for explicit or implicit perspectivism (scenarios 2 and 3), these
-                conditioned
-                properties are withheld.</p></li>
-    </ul>
+        <h3>Retrieval Evaluation</h3>
+        <p>We employ for all three scenarios a two-folded evaluation for a comprehensive measure of
+            the retrieval
+            quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
+        <ul>
+            <li>
+                With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant
+                candidates, for
+                example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or
+                arguments that
+                additionally
+                match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong>
+                perspectivism. Following previous work
+                (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
+                precision@ metric.</li>
+            <li>
+                    Using <strong>diversity</strong>, we account for the influence of perspectivism in the evaluation by measuring
+                    whether a
+                    retrieval system proposes arguments balanced regarding the stance distribution and the authors'
+                    demographic
+                    properties (such as gender or political attitude). Following previous studies regarding fairness in
+                    argument
+                    retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
+                    all these
+                    properties separately and average them afterward. Note, since we condition on specific demographic
+                properties in the query for <strong>explicit</strong> or <strong>implicit perspectivism</strong> (scenarios 2 and 3), these
+                    conditioned
+                    properties are withheld.</li>
+        </ul>
     </section>
 
     <section class="section" id="data">
         <h2>Data</h2>
-        <p class="smaller-font">This shared task is grounded on the x-stance dataset (Vamvas & Sennrich, 2020), providing arguments annotated
+        <p>This shared task is grounded on the x-stance dataset (Vamvas & Sennrich, 2020),
+            providing arguments annotated
             with their stance regarding different political issues gathered from the voting recommendation platform
             https://www.smartvote.ch/. This platform provides voting suggestions based on a questionnaire that
             politicians and voters fill out. Therein, politicians can argue why they are in favor or against specific
             political issues.</p>
-        <p class="smaller-font">We use these arguments covering the 2019 Swiss Federal elections as a corpus and the political issues as
+        <p>We use these arguments covering the 2019 Swiss Federal elections as a corpus and the
+            political issues as
             queries. Afterward, we enrich these arguments with a total of 13 socio-demographic properties, either
             provided by the voting platform itself (gender, age, party, …) or derived from the filled-out questionnaire
             of the politicians (political attitude, important political aspects, …). This collection encapsulates 5,952
             arguments and 62 queries. This data is multilingual and covers German, French, and Italian. For simplicity,
             we provide examples translated into English in the following.</p>
-        <p class="smaller-font">
+        <p>
             We generate the train and test splits by considering 48 queries as training queries and 14 as development
             queries, while the argument corpus is used for both sets. Apart from the queries for the
             <strong>baseline</strong> scenario,
@@ -161,7 +167,7 @@
             information. While
             the x-stance dataset is publicly available, we will compose two secret test sets:</p>
         <br>
-        <p class="smaller-font">
+        <p>
             1. A set of queries and arguments covering the 2023 Swiss Federal election. For this composition, we will
             follow the same procedure as done for the x-stance dataset.
             <br>
@@ -171,13 +177,14 @@
             formulate specific queries representing them.
         </p>
         <h3>Socio-Demographic Properties</h3>
-        <p class="smaller-font">We describe the socio-demographic profile of an author using the properties given by smartvote.ch. This
+        <p>We describe the socio-demographic profile of an author using the properties given by
+            smartvote.ch. This
             includes eight personal properties: gender, age, party, focal point of life, occupation, education, civil
             status, denomination, and political attitude. In addition, we track whether one of the following political
             issues is essential, neutral, or not important: open foreign policy, liberal economic policy, restrictive
             financial policy, law & order, restrictive migration policy, expanded environmental protection.</p>
         <h3>Dataformat</h3>
-        <p class="smaller-font">
+        <p>
             We will provide the data in the form of two JSON file types. The first, named <code>corpus.jsonl</code>,
             will consist of a collection of arguments along with the authors' socio-demographic profiles. The second
             type includes <code>baseline_train.jsonl</code> and <code>perspectivsm_train.jsonl</code>, which contain
@@ -244,7 +251,7 @@
         <div id="organizing_committee">
             <div class="member">
                 <div class="details">
-                    <img src="img/people/andreas.jpg" class="photo"/>
+                    <img src="img/people/andreas.jpg" class="photo" alt=""/>
                     <p class="name"><a target="_blank"
                                        href="https://www.hslu.ch/en/lucerne-university-of-applied-sciences-and-arts/about-us/people-finder/profile/?pid=3959">Andreas
                         Waldis</a></p>
@@ -252,7 +259,7 @@
             </div>
             <div class="member">
                 <div class="details">
-                    <img src="img/people/neele.jpg" class="photo"/>
+                    <img src="img/people/neele.jpg" class="photo" alt=""/>
                     <p class="name"><a target="_blank" href="https://www.ims.uni-stuttgart.de/institut/team/Falk/">Neele
                         Falk</a></p>
                 </div>
