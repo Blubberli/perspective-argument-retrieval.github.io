@@ -74,7 +74,8 @@
         <h2>Task Description</h2>
         <p>Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a
             corpus given a
-            specific query. With this shared task, we formulate perspective argument retrieval as an expansion of argument
+            specific query. With this shared task, we formulate perspective argument retrieval as an expansion of
+            argument
             retrieval with socio-demographic information. Concretely, this task proposes three scenarios of
             varying difficulties to considering socio-demographic profiles. Therefore, we want to foster approaches
             taking into account latent aspects of argumentation beyond semantic features, such as personal attitude. We
@@ -122,35 +123,36 @@
         <p>We employ for all three scenarios a two-folded evaluation for a comprehensive measure of
             the retrieval
             quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
-        <ul>
-            <li>
-                With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant
-                candidates, for
-                example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or
-                arguments that
-                additionally
-                match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong>
-                perspectivism. Following previous work
-                (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
-                precision@ metric.
-            </li>
-            <li>
-                Using <strong>diversity</strong>, we account for the influence of perspectivism in the evaluation by
-                measuring
-                whether a
-                retrieval system proposes arguments balanced regarding the stance distribution and the authors'
-                demographic
-                properties (such as gender or political attitude). Following previous studies regarding fairness in
-                argument
-                retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
-                all these
-                properties separately and average them afterward. Note, since we condition on specific demographic
-                properties in the query for <strong>explicit</strong> or <strong>implicit perspectivism</strong>
-                (scenarios 2 and 3), these
-                conditioned
-                properties are withheld.
-            </li>
-        </ul>
+            <br>
+        <p></p>
+           <br>
+        <p>
+            With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant
+            candidates, for
+            example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or
+            arguments that
+            additionally
+            match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong>
+            perspectivism. Following previous work
+            (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
+            precision@ metric.</p>
+        <br>
+        <p>
+            Using <strong>diversity</strong>, we account for the influence of perspectivism in the evaluation by
+            measuring
+            whether a
+            retrieval system proposes arguments balanced regarding the stance distribution and the authors'
+            demographic
+            properties (such as gender or political attitude). Following previous studies regarding fairness in
+            argument
+            retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
+            all these
+            properties separately and average them afterward. Note, since we condition on specific demographic
+            properties in the query for <strong>explicit</strong> or <strong>implicit perspectivism</strong>
+            (scenarios 2 and 3), these
+            conditioned
+            properties are withheld.</p>
+
     </section>
 
     <section class="section" id="data">
