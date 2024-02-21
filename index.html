@@ -108,19 +108,30 @@
 
         <h3>Retrieval Evaluation</h3>
         <p>We employ for all three scenarios a two-folded evaluation for a comprehensive measure of the retrieval
-            quality. Concretely, we distinguish between relevance and diversity:
-            With relevance, we focus on the ability of a retrieval system to select the relevant candidates, for
-            example, all arguments addressing the queried issue for the baseline scenario or arguments that additionally
-            match specific demographic properties for explicit or implicit perspectivism. Following previous work
-            (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
-            precision@ metric.
-            Using diversity, we account for the influence of perspectivism in the evaluation by measuring whether a
-            retrieval system proposes arguments balanced regarding the stance distribution and the authors' demographic
-            properties (such as gender or political attitude). Following previous studies regarding fairness in argument
-            retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for all these
-            properties separately and average them afterward. Note, since we condition on specific demographic
-            properties in the query for explicit or implicit perspectivism (scenarios 2 and 3), these conditioned
-            properties are withheld. </p>
+            quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
+        <ul>
+            <li><p>
+                With <strong>relevance</strong>, we focus on the ability of a retrieval system to select the relevant candidates, for
+                example, all arguments addressing the queried issue for the <strong>baseline scenario</strong> or arguments that
+                additionally
+                match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong> perspectivism. Following previous work
+                (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
+                precision@ metric.</p></li>
+            <li>
+                <p>
+                    Using diversity, we account for the influence of perspectivism in the evaluation by measuring
+                    whether a
+                    retrieval system proposes arguments balanced regarding the stance distribution and the authors'
+                    demographic
+                    properties (such as gender or political attitude). Following previous studies regarding fairness in
+                    argument
+                    retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
+                    all these
+                    properties separately and average them afterward. Note, since we condition on specific demographic
+                    properties in the query for explicit or implicit perspectivism (scenarios 2 and 3), these
+                    conditioned
+                    properties are withheld.</p></li>
+        </ul>
     </section>
 
     <section class="section" id="data">
@@ -135,14 +146,20 @@
             provided by the voting platform itself (gender, age, party, …) or derived from the filled-out questionnaire
             of the politicians (political attitude, important political aspects, …). This collection encapsulates 5,952
             arguments and 62 queries. This data is multilingual and covers German, French, and Italian. For simplicity,
-            we provide examples translated into English in the following.
+            we provide examples translated into English in the following.</p>
+        <p>
             We generate the train and test splits by considering 48 queries as training queries and 14 as development
-            queries, while the argument corpus is used for both sets. Apart from the queries for the baseline scenario,
-            we will also provide queries for the perspectivism scenarios, including socio-demographic information. While
-            the x-stance dataset is publicly available, we will compose two secret test sets:
-            A set of queries and arguments covering the 2023 Swiss Federal election. For this composition, we will
+            queries, while the argument corpus is used for both sets. Apart from the queries for the
+            <strong>baseline</strong> scenario,
+            we will also provide queries for the <strong>perspectivism</strong> scenarios, including socio-demographic
+            information. While
+            the x-stance dataset is publicly available, we will compose two secret test sets:</p>
+        <br>
+        <p>
+            1. A set of queries and arguments covering the 2023 Swiss Federal election. For this composition, we will
             follow the same procedure as done for the x-stance dataset.
-            Furthermore, we will conduct a user study to provide a set of high-quality annotations from a voter's
+            <br>
+            2. Furthermore, we will conduct a user study to provide a set of high-quality annotations from a voter's
             perspective. Therefore, we let potential voters annotate relevant arguments regarding specific political
             issues. Along with these annotations, we will collect their socio-demographic profiles, allowing us to
             formulate specific queries representing them.
@@ -240,32 +257,55 @@
         -->
     </section>
 
-    <section class="section" id="refs">
+    <div class="literature-references">
         <h2>References</h2>
-        <p>Bondarenko, A., Fröbe, M., Beloucif, M., Gienapp, L., Ajjour, Y., Panchenko, A., ... & Hagen, M. (2020).
-            Overview of Touché 2020: argument retrieval. In Experimental IR Meets Multilinguality, Multimodality, and
-            Interaction: 11th International Conference of the CLEF Association, CLEF 2020, Thessaloniki, Greece,
-            September 22–25, 2020, Proceedings 11 (pp. 384-395). Springer International Publishing.
+        <ul>
+            <li>
+                <p>Bondarenko, A., Fröbe, M., Beloucif, M., Gienapp, L., Ajjour, Y., Panchenko, A., ... & Hagen, M.
+                    (2020).
+                    <cite>Overview of Touché 2020: argument retrieval. In Experimental IR Meets Multilinguality,
+                        Multimodality, and
+                        Interaction: 11th International Conference of the CLEF Association, CLEF 2020, Thessaloniki,
+                        Greece,
+                        September 22–25, 2020, Proceedings 11 (pp. 384-395). Springer International Publishing.</cite>
+                </p>
+            </li>
+            <li>
+                <p>Bondarenko, Alexander et al. (2022). Overview of Touché 2022: Argument Retrieval. In: Experimental IR
+                    Meets
+                    <cite>Multilinguality, Multimodality, and Interaction. Springer International Publishing, pp.
+                        311–336.</cite></p>
+            </li>
+            <li>
+                <p>Cherumanal, S. P., Spina, D., Scholer, F., & Croft, W. B. (2021). Evaluating fairness in argument
+                    retrieval. In
+                    <cite>Proceedings of the 30th ACM international conference on information & knowledge management
+                        (pp. 3363-3367).</cite></p>
+            </li>
+            <li>
+                <p>Thakur, N., Reimers, N., Rücklé, A., Srivastava, A., & Gurevych, I. (2021). Beir: A heterogenous
+                    benchmark for
+                    <cite>zero-shot evaluation of information retrieval models. arXiv preprint arXiv:2104.08663.</cite>
+                </p>
+            </li>
+            <li>
+                <p>Vamvas, J., & Sennrich, R. (2020, June). X-stance: A Multilingual Multi-Target Dataset for Stance
+                    Detection.
+                    <cite>In 5th SwissText & 16th KONVENS Joint Conference 2020 (p. 9). CEUR-WS. Org.</cite></p>
+            </li>
+            <li>
+                <p>Wachsmuth, Henning, Shahbaz Syed, and Benno Stein (July 2018). "Retrieval of the Best Counterargument
+                    without
+                    <cite>Prior Topic Knowledge". In: Proceedings of the 56th Annual Meeting of the Association for
+                        Computational
+                        Linguistics (Volume 1: Long Papers). Ed. by Iryna Gurevych and Yusuke Miyao. Melbourne,
+                        Australia: Association
+                        for Computational Linguistics, pp. 241–251.</cite></p>
+            </li>
 
-            Bondarenko, Alexander et al. (2022). Overview of Touché 2022: Argument Retrieval. In: Experimental IR Meets
-            Multilinguality, Multimodality, and Interaction. Springer International Publishing, pp. 311–336.
+        </ul>
+    </div>
 
-            Vamvas, J., & Sennrich, R. (2020, June). X-stance: A Multilingual Multi-Target Dataset for Stance Detection.
-            In 5th SwissText & 16th KONVENS Joint Conference 2020 (p. 9). CEUR-WS. Org.
-
-            Thakur, N., Reimers, N., Rücklé, A., Srivastava, A., & Gurevych, I. (2021). Beir: A heterogenous benchmark
-            for zero-shot evaluation of information retrieval models. arXiv preprint arXiv:2104.08663.
-
-            Pathiyan Cherumanal, S., Spina, D., Scholer, F., & Croft, W. B. (2021, October). Evaluating fairness in
-            argument retrieval. In Proceedings of the 30th ACM international conference on information & knowledge
-            management (pp. 3363-3367).
-
-            Wachsmuth, Henning, Shahbaz Syed, and Benno Stein (July 2018). "Retrieval of the Best Counterargument
-            without Prior Topic Knowledge". In: Proceedings of the 56th Annual Meeting of the Association for
-            Computational Linguistics (Volume 1: Long Papers). Ed. by Iryna Gurevych and Yusuke Miyao. Melbourne,
-            Australia: Association for Computational Linguistics, pp. 241–251.
-        </p>
-    </section>
 
     <section class="section" id="policy">
         <h2>Policy</h2>
