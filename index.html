@@ -70,7 +70,7 @@
     <section class="section" id="about">
         <h2>About</h2>
         <p>The "Perspective Argument Retrieval" task addresses the often-overlooked challenge of incorporating
-            socio-demographic information (such as political views, age, and gender) in argument retrieval. By focusing
+            sociocultural factors (such as political views, occupation, age, gender) in argument retrieval. By focusing
             on these aspects, we acknowledge their potential latent influence on argumentation.</p>
 
         <p>With this shared task, we invite the community to develop methods that concentrate on this crucial area and
@@ -80,11 +80,10 @@
     <section class="section" id="task">
         <h2>Task Description</h2>
         <p>Argument retrieval is the task of retrieving a set of top-k relevant arguments out of a
-            corpus given a
-            specific query. With this shared task, we formulate perspective argument retrieval as an expansion of
-            argument
-            retrieval with socio-demographic information. Concretely, this task proposes three scenarios of
-            varying difficulties to considering socio-demographic profiles. Therefore, we want to foster approaches
+            corpus given a specific query. With this shared task, we formulate perspective argument retrieval as an
+            expansion of
+            argument retrieval considering sociocultural factors. Concretely, this task proposes three scenarios of
+            varying difficulties to considering socio-cultural profiles. Therefore, we want to foster approaches
             taking into account latent aspects of argumentation beyond semantic features, such as personal attitude. We
             consider these aspects both during retrieval and evaluation. </p>
         <h3>Retrieval Scenarios</h3>
@@ -106,10 +105,10 @@
             additional sugar as a supplement.</em></p>
         <br>
         <p><strong>Scenario 2: Explicit perspectivism</strong> extends the baseline task by explicitly adding
-            socio-demographic
+            socio-cultural
             information to the query and the corpus and limiting the relevant candidates to arguments from authors
-            matching the corresponding demographic information. With this second scenario, we test whether a retrieval
-            system can consider socio-demographic properties when explicitly mentioned in the query and the candidates.
+            matching the corresponding socio-cultural background. With this second scenario, we test whether a retrieval
+            system can consider socio-cultural properties when explicitly mentioned in the query and the candidates.
             <br>
         <p><u>Example query:</u> <em>Given a left attitude, are you in favor of the introduction of a tax on foods
             containing
@@ -123,8 +122,8 @@
         <br>
         <p><strong>Scenario 3: Implicit perspectivism</strong> This scenario is similar to explicit perspectivism, but
             we only add
-            socio-demographic information to the query. Therefore, we test the ability of a retrieval system to account
-            for latently encoded socio-demographic information within the argument.
+            socio-cultural information to the query. Therefore, we test the ability of a retrieval system to account
+            for latently encoded socio-cultural information within the argument.
             <br>
         <p><u>Example query:</u> <em>Given a liberal attitude, are you in favor of the introduction of a tax on foods
             containing
@@ -154,10 +153,9 @@
         <p>
             Using <strong>diversity</strong>, we account for the influence of perspectivism in the evaluation by
             measuring
-            whether a
-            retrieval system proposes arguments balanced regarding the stance distribution and the authors'
-            demographic
-            properties (such as gender or political attitude). Following previous studies regarding fairness in
+            to what extend a
+            retrieval system retrieval system diversifies the relevant arguments regarding stance distribution or other
+            socio-cultural factors, such as age or education. Following previous studies regarding fairness in
             argument
             retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
             all these
@@ -179,7 +177,7 @@
             political issues.</p>
         <p>We use these arguments covering the 2019 Swiss Federal elections as a corpus and the
             political issues as
-            queries. Afterward, we enrich these arguments with a total of 13 socio-demographic properties, either
+            queries. Afterward, we enrich these arguments with a total of 13 socio-cultural properties, either
             provided by the voting platform itself (gender, age, party, …) or derived from the filled-out questionnaire
             of the politicians (political attitude, important political aspects, …). This collection encapsulates 5,952
             arguments and 62 queries. This data is multilingual and covers German, French, and Italian. For simplicity,
@@ -188,7 +186,7 @@
             We generate the train and test splits by considering 48 queries as training queries and 14 as development
             queries, while the argument corpus is used for both sets. Apart from the queries for the
             <strong>baseline</strong> scenario,
-            we will also provide queries for the <strong>perspectivism</strong> scenarios, including socio-demographic
+            we will also provide queries for the <strong>perspectivism</strong> scenarios, including socio-cultural
             information. While
             the x-stance dataset is publicly available, we will compose two secret test sets:</p>
         <br>
@@ -198,11 +196,11 @@
             <br>
             2. Furthermore, we will conduct a user study to provide a set of high-quality annotations from a voter's
             perspective. Therefore, we let potential voters annotate relevant arguments regarding specific political
-            issues. Along with these annotations, we will collect their socio-demographic profiles, allowing us to
+            issues. Along with these annotations, we will collect their socio-cultural profiles, allowing us to
             formulate specific queries representing them.
         </p>
         <h3>Socio-Demographic Properties</h3>
-        <p>We describe the socio-demographic profile of an author using the properties given by
+        <p>We describe the socio-cultural profile of an author using the properties given by
             smartvote.ch. This
             includes eight personal properties: gender, age, party, focal point of life, occupation, education, civil
             status, denomination, and political attitude. In addition, we track whether one of the following political
@@ -211,9 +209,9 @@
         <h3>Dataformat</h3>
         <p>
             We will provide the data in the form of two JSON file types. The first, named <code>corpus.jsonl</code>,
-            will consist of a collection of arguments along with the authors' socio-demographic profiles. The second
+            will consist of a collection of arguments along with the authors' socio-cultural profiles. The second
             type includes <code>baseline_train.jsonl</code> and <code>perspectivsm_train.jsonl</code>, which contain
-            specific queries and the relevant candidates, as well as any considered socio-demographic properties, where
+            specific queries and the relevant candidates, as well as any considered socio-cultural properties, where
             applicable.
         </p>
         <p>Here are examples of what these JSON files will look like:</p>
