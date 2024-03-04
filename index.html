@@ -54,7 +54,7 @@
             <a role="button"
                href="https://join.slack.com/t/perspectivear-zzl7474/shared_invite/zt-2bi3d5g1g-Fo5Bnmsjgskhu2JnnO3h2w"
                target="_blank"><img src="img/logos/slack_logo.png" alt="twitter" class="icon"/></a>
-            <a role="button" href="perspectiveargretrieval@gmail.com" target="_blank"><img src="img/logos/mail_logo.png"
+            <a role="button" href="mailto:perspectiveargretrieval@gmail.com" target="_blank"><img src="img/logos/mail_logo.png"
                                                                                            alt="email"
                                                                                            class="icon"/></a>
         </div>
@@ -62,15 +62,24 @@
 
     <hr>
     <section class="section" id="registration">
-        <h2>Register for the task here:</h2>
+        <h2>Registration and more:</h2>
+        <h3>Registration</h3>
         <p><a href="https://forms.gle/98gFuJi8fVNZ4qn89">registration formular</a></p>
+        <h3>Data Download</h3>
+        <p>You can download the data and evaluation script from <a
+                href="https://github.com/Blubberli/argmin2024-perspective/tree/main">this repository</a></p>
+        <h3>Communication</h3>
+        <p>Join our slack channel for any information or to ask questions <a
+                href="https://join.slack.com/t/perspectivear-zzl7474/shared_invite/zt-2bi3d5g1g-Fo5Bnmsjgskhu2JnnO3h2w">here</a>
+        </p>
+        <p>Or write us an e-mail to : <a href="mailto:perspectiveargretrieval@gmail.com"> </a></p>
     </section>
 
     <hr>
     <section class="section" id="about">
         <h2>About</h2>
         <p>The "Perspective Argument Retrieval" task addresses the often-overlooked challenge of incorporating
-            sociocultural factors (such as political views, occupation, age, gender) in argument retrieval. By focusing
+            socio-cultural factors (such as political views, occupation, age, gender) in argument retrieval. By focusing
             on these aspects, we acknowledge their potential latent influence on argumentation.</p>
 
         <p>With this shared task, we invite the community to develop methods that concentrate on this crucial area and
@@ -87,12 +96,6 @@
             taking into account latent aspects of argumentation beyond semantic features, such as personal attitude. We
             consider these aspects both during retrieval and evaluation. </p>
         <h3>Retrieval Scenarios</h3>
-        <p>This shared task distinguishes between three different retrieval scenarios with
-            increasing difficulty. Note,
-            we show in the Appendix A. baseline results for the first scenario. These results represent the lower bound
-            of the expected performance and show that the first scenario with the lowest difficulty is generally
-            solvable with sufficient performance.</p>
-        <br>
         <p><strong>Scenario 1: Baseline</strong> retrieval of relevant arguments given a specific query from a given
             corpus. Therefore,
             we evaluate the general abilities of a system to retrieve relevant arguments.
@@ -135,7 +138,8 @@
         <h3>Retrieval Evaluation</h3>
         <p>We employ for all three scenarios a two-folded evaluation for a comprehensive measure of
             the retrieval
-            quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity</strong>:</p>
+            quality. Concretely, we distinguish between <strong>relevance</strong> and <strong>diversity /
+                fairness</strong>:</p>
         <br>
         <p></p>
         <br>
@@ -146,116 +150,51 @@
             arguments that
             additionally
             match specific demographic properties for <strong>explicit</strong> or <strong>implicit</strong>
-            perspectivism. Following previous work
-            (Bondarenko et al., 2020; Bondarenko et al. 2022., 2022; Thakur et al., 2021), we use the nDCG@ and
-            precision@ metric.</p>
+            perspectivism.</p>
         <br>
         <p>
             Using <strong>diversity</strong>, we account for the influence of perspectivism in the evaluation by
             measuring
-            to what extend a
-            retrieval system retrieval system diversifies the relevant arguments regarding stance distribution or other
-            socio-cultural factors, such as age or education. Following previous studies regarding fairness in
-            argument
-            retrieval systems (Pathiyan Cherumanal et al., 2021), we calculate alpha-DCG@ and s-precision@ for
-            all these
-            properties separately and average them afterward. Note, since we condition on specific demographic
-            properties in the query for <strong>explicit</strong> or <strong>implicit perspectivism</strong>
-            (scenarios 2 and 3), these
-            conditioned
-            properties are withheld.</p>
+            to what extend a retrieval system retrieval system diversifies the relevant arguments regarding stance
+            distribution or other
+            socio-cultural factors, such as age or education.</p>
 
     </section>
 
     <section class="section" id="data">
         <h2>Data</h2>
+        <p>The data and evaluation script can be downloaded from <a
+                href="https://github.com/Blubberli/argmin2024-perspective/tree/main">this repository</a></p>
         <p>This shared task is grounded on the x-stance dataset (Vamvas & Sennrich, 2020),
             providing arguments annotated
             with their stance regarding different political issues gathered from the voting recommendation platform
             https://www.smartvote.ch/. This platform provides voting suggestions based on a questionnaire that
             politicians and voters fill out. Therein, politicians can argue why they are in favor or against specific
             political issues.</p>
-        <p>We use these arguments covering the 2019 Swiss Federal elections as a corpus and the
-            political issues as
-            queries. Afterward, we enrich these arguments with a total of 13 socio-cultural properties, either
-            provided by the voting platform itself (gender, age, party, …) or derived from the filled-out questionnaire
-            of the politicians (political attitude, important political aspects, …). This collection encapsulates 5,952
-            arguments and 62 queries. This data is multilingual and covers German, French, and Italian. For simplicity,
-            we provide examples translated into English in the following.</p>
-        <p>
-            We generate the train and test splits by considering 48 queries as training queries and 14 as development
-            queries, while the argument corpus is used for both sets. Apart from the queries for the
-            <strong>baseline</strong> scenario,
-            we will also provide queries for the <strong>perspectivism</strong> scenarios, including socio-cultural
-            information. While
-            the x-stance dataset is publicly available, we will compose two secret test sets:</p>
         <br>
-        <p>
-            1. A set of queries and arguments covering the 2023 Swiss Federal election. For this composition, we will
-            follow the same procedure as done for the x-stance dataset.
-            <br>
-            2. Furthermore, we will conduct a user study to provide a set of high-quality annotations from a voter's
-            perspective. Therefore, we let potential voters annotate relevant arguments regarding specific political
-            issues. Along with these annotations, we will collect their socio-cultural profiles, allowing us to
-            formulate specific queries representing them.
-        </p>
-        <h3>Socio-Demographic Properties</h3>
-        <p>We describe the socio-cultural profile of an author using the properties given by
-            smartvote.ch. This
-            includes eight personal properties: gender, age, party, focal point of life, occupation, education, civil
-            status, denomination, and political attitude. In addition, we track whether one of the following political
-            issues is essential, neutral, or not important: open foreign policy, liberal economic policy, restrictive
-            financial policy, law & order, restrictive migration policy, expanded environmental protection.</p>
-        <h3>Dataformat</h3>
-        <p>
-            We will provide the data in the form of two JSON file types. The first, named <code>corpus.jsonl</code>,
-            will consist of a collection of arguments along with the authors' socio-cultural profiles. The second
-            type includes <code>baseline_train.jsonl</code> and <code>perspectivsm_train.jsonl</code>, which contain
-            specific queries and the relevant candidates, as well as any considered socio-cultural properties, where
-            applicable.
-        </p>
-        <p>Here are examples of what these JSON files will look like:</p>
-        <p><strong>Example corpus.jsonl:</strong></p>
-        <pre><code>[
-  {
-    "argument_id": "&lt;argument_id&gt;",
-    "text": "Eating is an individual decision. It doesn't need a nanny state.",
-    "target": "Are you in favor of the introduction of a tax on foods containing sugar …",
-    "stance": "CON",
-    "demographic_profile": {...}
-  },
-  ...
-]</code></pre>
-
-        <p><strong>Example baseline_train.jsonl:</strong></p>
-        <pre><code>[
-  {
-    "query_id": "&lt;query_id&gt;",
-    "text": "Are you in favor of the introduction of a tax on foods containing sugar …",
-    "relevant_candidates": [23, 4623, 65, 321, ...]
-  },
-  ...
-]</code></pre>
-
-        <p><strong>Example perspectivsm_train.jsonl:</strong></p>
-        <pre><code>[
-  {
-    "query_id": "&lt;query_id&gt;",
-    "text": "Are you in favor of the introduction of a tax on foods containing sugar …",
-    "demographic_properties": {
-      "political_attitude": "liberal"
-    },
-    "relevant_candidates": [23, 4623, 65, 321, ...]
-  },
-  ...
-]</code></pre>
+        <p>We use the arguments covering the 2019 Swiss Federal elections as a corpus and the political issues as
+            queries.
+            Afterward, we enrich these arguments with eight socio-cultural properties, either provided by the voting
+            platform itself (gender, age, party, …) or derived from the filled-out questionnaire of the politicians
+            (political
+            attitude, important political aspects, …). This collection encapsulates 26,335 arguments for 45 political
+            aspects from
+            German, French, and Italian.</p>
+        <br>
+        <p>We generate the train and development splits by considering 35 political aspects for training and 10 for
+            development,
+            while the argument corpus is used for both sets. Apart from the queries for the baseline scenario, we will
+            also provide
+            queries for the perspectivism scenarios, including socio-cultural information. As the x-stance dataset is
+            publicly
+            available, final evaluation data consist of secret test sets.</p>
     </section>
 
 
     <section class="section" id="dates">
         <h2>Important Dates</h2>
         <ul>
-            <li><b>Release Training Data:</b> 1st March
+            <li><b>Release Training Data:</b> 4th March
             <li><b>Release Test Data:</b> 17 March
             <li><b>First Evaluation Circle:</b> 24 April
             <li><b>Second Evaluation Circle:</b> 30 April
